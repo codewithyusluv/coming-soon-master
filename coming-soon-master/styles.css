@@ -1,0 +1,261 @@
+:root {
+  --pink-100: hsl(0, 80%, 86%);
+  --pink-200: hsl(0, 74%, 74%);
+  --pink-400: hsl(0, 36%, 70%);
+  --red-500: hsl(0, 93%, 68%);
+  --gray-900: hsl(0, 6%, 24%);
+  --white: #ffffff;
+  --shadow: rgba(206, 152, 152, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+  color: var(--gray-900);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("images/bg-pattern-desktop.svg") no-repeat right center / cover;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page {
+  width: min(100%, 1440px);
+  padding: 0 2rem;
+}
+
+.card {
+  display: flex;
+  min-height: 800px;
+  background: linear-gradient(135deg, #ffffff 0%, #fff7f7 45%, #fff3f3 100%);
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 1 58%;
+  padding: 3.5rem 8.75rem 3.5rem 10.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  margin-bottom: 6rem;
+}
+
+.logo {
+  width: 10rem;
+  height: auto;
+}
+
+.hero-copy {
+  max-width: 27.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--pink-400);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 5vw, 5.25rem);
+  line-height: 0.92;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--gray-900);
+}
+
+h1 span {
+  display: block;
+  font-weight: 300;
+  color: var(--pink-400);
+}
+
+.lead {
+  margin-top: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(49, 39, 40, 0.8);
+}
+
+.newsletter-form {
+  max-width: 27.875rem;
+  margin-top: 2.5rem;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(206, 152, 152, 0.7);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.input-wrap:focus-within {
+  box-shadow: 0 0 0 4px rgba(206, 152, 152, 0.12);
+}
+
+input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 1.25rem 1.5rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--gray-900);
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(165, 120, 120, 0.8);
+}
+
+button {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 6.25rem;
+  height: 4.25rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
+  box-shadow: 0 1rem 1.5rem var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover,
+button:focus-visible {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+button img {
+  width: 1.1rem;
+  height: auto;
+}
+
+.error-message {
+  min-height: 1.25rem;
+  margin: 0.75rem 1.5rem 0;
+  color: var(--red-500);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.visual {
+  flex: 0 0 42%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding: 3rem 4rem 3rem 4rem;
+  }
+
+  .brand {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    width: 100%;
+    padding: 0;
+  }
+
+  .card {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content {
+    order: 2;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .brand {
+    margin-bottom: 2.5rem;
+  }
+
+  .logo {
+    width: 8rem;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .eyebrow,
+  h1 {
+    letter-spacing: 0.1rem;
+  }
+
+  .lead {
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  .visual {
+    order: 1;
+    flex-basis: auto;
+    min-height: 18.75rem;
+  }
+
+  button {
+    width: 4.5rem;
+    height: 3.8rem;
+  }
+}
+
